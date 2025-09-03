@@ -30,7 +30,7 @@ def show_menu():
     
     # Use the 'art' library to generate and print the title
     title_art = text2art("RAVIS WORLD", font="tarty1")
-    subtitle_art = text2art("Terminal", font="small")
+    subtitle_art = text2art("Let's Drink Horror", font="small")
     
     print(title_art)
     print(subtitle_art)
@@ -64,7 +64,7 @@ def show_menu():
             if 0 <= choice_index < len(available_chapters):
                 selected_chapter_name = available_chapters[choice_index]
                 # Dynamically import the selected chapter module
-                chapter_module = importlib.import_module(f'chapters.{selected_chapter_name}')
+                chapter_module = importlib.import_module(f'src.chapters.{selected_chapter_name}')
                 
                 print(f"Starting {selected_chapter_name}...")
                 clear_screen()

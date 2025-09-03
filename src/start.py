@@ -1,10 +1,6 @@
-# This script requires the 'art' library. Install it with:
-# pip install art
-
 import os
 import time
 import main
-from art import text2art
 
 def clear_screen():
     """Clears the terminal screen for a cleaner display."""
@@ -18,6 +14,7 @@ def show_intro():
     
     # Boot sequence
     boot_sequence = [
+        {"text": "Copyleft Ravi's World", "delay": 0.1},
         {"text": "C:\\>", "delay": 2},
         {"text": "Loading system files...", "delay": 1},
         {"text": "DONE.", "delay": 1.5}
