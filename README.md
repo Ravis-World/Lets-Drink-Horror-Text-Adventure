@@ -1,1 +1,1 @@
-# Lets-Drink-Horror-Chapter-2
+# Lets Drink Horror
