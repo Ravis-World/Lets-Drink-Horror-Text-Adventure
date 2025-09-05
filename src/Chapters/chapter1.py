@@ -9,7 +9,7 @@ def start_game(game_state=None):
     if game_state is None:
         game_state = {}
 
-    print("\nYou are Dr. Θ. You have just devised a plan to sabotage Team Toadette's wedding party.")
+    print("\nYou are Dr. Θ. You have just devised a plan to sabotage Team Toadette.")
     print("Disguise yourself as a verified bartender and help create the ultimate death drink.\n")
 
     # Choose base liquid
