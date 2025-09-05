@@ -58,3 +58,7 @@ Submit pull requests for new chapters, bugfixes, or gameplay improvements.
 ## Antivirus & Standalone Executables
 
 When building a standalone .exe using PyInstaller (or similar tools), some antivirus programs may flag the file as suspicious. This is usually a false positive caused by how PyInstaller packages Python scripts and you are safe to download.
+
+## Credits
+
+Favicon by [Iconshock](http://www.iconshock.com/vista-icons.php) - [File:WIN preview Food.jpg](//commons.wikimedia.org/wiki/File:WIN_preview_Food.jpg "File:WIN preview Food.jpg"), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0 "Creative Commons Attribution-Share Alike 3.0"), [Link](https://commons.wikimedia.org/w/index.php?curid=10267475)
