@@ -2,6 +2,7 @@ import os
 import importlib
 import sys
 from art import text2art
+from time import sleep
 
 def clear_screen():
     """Clears the terminal screen for a cleaner display."""
@@ -26,10 +27,10 @@ def show_menu():
         clear_screen()
 
         title_art = text2art("RAVIS WORLD", font="tarty1")
-        subtitle_art = text2art("Terminal", font="small")
+        subtitle_art = text2art("Let's Drink Horror", font="small")
         print(title_art)
         print(subtitle_art)
-        print("\n\n")
+        sleep(1)
 
         available_chapters = get_available_chapters()
         if not available_chapters:
@@ -43,24 +44,23 @@ def show_menu():
             display_name = chapter_name.replace("chapter", "Chapter ").replace("_", " ").title()
             print(f"        {i}. {display_name}")
 
-        print("        Q. Quit")
-        print("        0. Return to menu (if pressed by mistake)\n\n")
+        print("        Q. Quit\n\n")
 
         choice = input("> ").strip().lower()
 
         if choice == 'q':
-            input("Press Enter to quit...")
-            sys.exit(0)
-
-        if choice == '0':
-            # Just redisplay menu again
-            continue
-
+            confirm = input("Are you sure you want to quit? (Y/N): ").strip().lower()
+            if confirm == 'y':
+                sys.exit(0)
+            else:
+                # back to menu
+                continue
+            
         try:
             choice_index = int(choice) - 1
             if 0 <= choice_index < len(available_chapters):
                 selected_chapter_name = available_chapters[choice_index]
-                chapter_module = importlib.import_module(f'src.chapters.{selected_chapter_name}')
+                chapter_module = importlib.import_module(f'chapters.{selected_chapter_name}')
 
                 clear_screen()
                 chapter_module.start_game()

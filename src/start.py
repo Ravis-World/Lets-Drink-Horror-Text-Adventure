@@ -1,18 +1,25 @@
 import os
 import time
 import main
+from art import text2art
 
 def clear_screen():
     """Clears the terminal screen for a cleaner display."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def set_terminal_title(title):
+    """Sets the terminal/command prompt title."""
+    if os.name == 'nt':  # Windows
+        os.system(f"title {title}")
+    else:  # macOS/Linux
+        sys.stdout.write(f"\x1b]2;{title}\x07")
+        sys.stdout.flush()
+
 def show_intro():
-    """
-    Displays the boot sequence for the game.
-    """
+    """Displays the boot sequence for the game."""
     clear_screen()
+    set_terminal_title("Let's Drink Horror")  # <-- set the window title here
     
-    # Boot sequence
     boot_sequence = [
         {"text": "Copyleft Ravi's World", "delay": 0.1},
         {"text": "C:\\>", "delay": 2},
@@ -27,12 +34,8 @@ def show_intro():
     clear_screen()
 
 def main_launcher():
-    """
-    The main launcher function.
-    This will run the intro and then call the main menu.
-    """
+    """The main launcher function."""
     show_intro()
-    # Call the main menu logic from the main.py file
     main.show_menu()
 
 if __name__ == "__main__":
