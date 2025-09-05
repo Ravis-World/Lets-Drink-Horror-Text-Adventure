@@ -211,21 +211,21 @@ def opening_ritual(game_state):
 
     # --- Endings dictionary ---
     endings = {
-        'a1aa': "The plush bird takes a sip... They freeze mid-sip and slowly slump over.",
-        'a1ab': "The plush bird drinks... Foam bubbles from their beak, slides off the bar!",
+        'a1aa': "They freeze mid-sip and slowly slump over.",
+        'a1ab': "Foam bubbles from their beak, slides off the bar!",
         'a1ba': "A quick gulp... Their eyes spiral, a quiet twitch... then a backward fall.",
         'a1bb': "Another sip of soap... Spinning, gurgling foam, a stiff collapse.",
         'a2aa': "Down it goes... Locked in place, a 'statue death'!",
         'a2ab': "A spicy end! Screams erupt, steam billows... they explode in feathers!",
         'a2ba': "Dark liquid consumed... They turn black, ooze from the eyes, and fall lifelessly.",
         'a2bb': "Minty fresh... and deadly! Comedic bubble foam, squeaks, and freezes.",
-        'c1aa': "A sticky situation... Mouth sealed, the bird flops stiff.",
+        'c1aa': "A sticky situation... Mouth sealed, the guest flops stiff.",
         'c1ab': "A chemical cocktail... A dizzy collapse, chemical vapour rises!",
-        'c1ba': "Sweet dreams, little bird. Dozes off peacefully, a dramatic stillness.",
-        'c1bb': "A colourful end. Rainbow vomit, bird stiffens smiling.",
-        'c2aa': "Lather, rinse, perish. Bubbles from the nose, plush floats away!",
-        'c2ab': "Shocking! Sparks fly, plush jerks violently.",
-        'c2ba': "A gooey demise. Bird melts, only a puddle remains.",
+        'c1ba': "Sweet dreams, little guest. Dozes off peacefully, a dramatic stillness.",
+        'c1bb': "A colourful end. Rainbow vomit, guest stiffens smiling.",
+        'c2aa': "Lather, rinse, perish. Bubbles from the nose, floats away!",
+        'c2ab': "Shocking! Sparks fly, jerks violently.",
+        'c2ba': "A gooey demise. guest melts, only a puddle remains.",
         'c2bb': "Brittleness at its finest. Cracks apart like brittle plastic."
     }
 
