@@ -1,6 +1,6 @@
 # Let's Drink Horror
 
-A Python text-adventure based off the [Raviolo The Magician](https://youtube.com/playlist?list=PLRhal9PyMmPttbSB7YvDoUY3SHRxfJ2qJ&si=vixXNa_7Wv8QHQtG) Series. Step into the role of Dr. Θ, a mischievous villain intent on sabotaging Team Toadette by creating the ultimate deadly drink. Choose bizarre ingredients, mix them with care (or chaos), and discover 16 unique endings ranging from hilarious to horrifying.
+A Python text-adventure based off the [Raviolo The Magician](https://youtube.com/playlist?list=PLRhal9PyMmPttbSB7YvDoUY3SHRxfJ2qJ&si=vixXNa_7Wv8QHQtG) Series. Step into the role of Dr. Θ, a mischievous villain intent on sabotaging Team Toadette. For example, in Chapter 1 by creating the ultimate deadly drink. Choose bizarre ingredients, mix them with care (or chaos), and discover 16 unique endings ranging from hilarious to horrifying. Then take you skills to break out of prison in Chapter 2.
 
 ## Download
 
@@ -38,14 +38,19 @@ A Python text-adventure based off the [Raviolo The Magician](https://youtube.com
 
 * From the main menu, select a chapter to begin.
 * Each chapter is a branching text adventure with multiple paths and endings.
-* Make choices to mix deadly ingredients and witness unique outcomes.
+* Make choices to improve your chance of the mission succeeding.
 * After each ending, you can try again or return to the main menu.
+
+### Chapters
+1. The Bar
+2. Slime Prison
+3. The Sticky Bank Job
 
 ## Features
 
 * ASCII-art styled title screen using the art library.
 * Boot-sequence intro with fake “loading system files”.
-* Fully modular chapter system — add as many chapters as you want.
+* Fully modular chapter system.
 
 ## Contributing
 
@@ -57,7 +62,7 @@ Submit pull requests for new chapters, bugfixes, or gameplay improvements.
 
 ## Antivirus & Standalone Executables
 
-When building a standalone .exe using PyInstaller (or similar tools), some antivirus programs may flag the file as suspicious. This is usually a false positive caused by how PyInstaller packages Python scripts and you are safe to download.
+When building a standalone app using PyInstaller (or similar tools), some antivirus programs may flag the file as suspicious. This is usually a false positive caused by how PyInstaller packages Python scripts and you are safe to download.
 
 ## Credits
 

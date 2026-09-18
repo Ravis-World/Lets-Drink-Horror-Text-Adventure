@@ -1,16 +1,26 @@
 import os
+import subprocess
+import sys
 import time
 import main
-from art import text2art
+
+def pause():
+    """Pause the game until the player presses Enter."""
+    input("\nPress Enter to continue...")
+    
+    clear_screen()
 
 def clear_screen():
-    """Clears the terminal screen for a cleaner display."""
-    os.system('cls' if os.name == 'nt' else 'clear')
+    """Clear the terminal screen in a cross-platform way."""
+    if os.name == "nt":
+        subprocess.run(["cls"], shell=True)
+    else:
+        subprocess.run(["clear"])
 
 def set_terminal_title(title):
     """Sets the terminal/command prompt title."""
     if os.name == 'nt':  # Windows
-        os.system(f"title {title}")
+        subprocess.run(['cmd', '/c', f'title {title}'], check=False)
     else:  # macOS/Linux
         sys.stdout.write(f"\x1b]2;{title}\x07")
         sys.stdout.flush()

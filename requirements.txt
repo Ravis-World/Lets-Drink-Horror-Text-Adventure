@@ -1,0 +1,5 @@
+# List of Requirements
+
+art # for intro graphics
+
+# That's all, folks.

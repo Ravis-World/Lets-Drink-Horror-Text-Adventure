@@ -1,12 +1,10 @@
 import os
 import importlib
+import subprocess
 import sys
 from art import text2art
 from time import sleep
-
-def clear_screen():
-    """Clears the terminal screen for a cleaner display."""
-    os.system('cls' if os.name == 'nt' else 'clear')
+from start import clear_screen
 
 def get_available_chapters():
     """Scans the 'chapters' folder and returns a list of chapter names."""
@@ -26,7 +24,7 @@ def show_menu():
     while True:
         clear_screen()
 
-        title_art = text2art("RAVIS WORLD", font="tarty1")
+        title_art = text2art("RAVI'S WORLD", font="tarty1")
         subtitle_art = text2art("Let's Drink Horror", font="small")
         print(title_art)
         print(subtitle_art)
@@ -39,12 +37,11 @@ def show_menu():
             input("\nPress ENTER to quit...")
             return
 
-        print("        Select a Chapter:")
+        print("        Select a Chapter:\n\n")
+        print("        Q. Quit")
         for i, chapter_name in enumerate(available_chapters, 1):
             display_name = chapter_name.replace("chapter", "Chapter ").replace("_", " ").title()
             print(f"        {i}. {display_name}")
-
-        print("        Q. Quit\n\n")
 
         choice = input("> ").strip().lower()
 
@@ -61,9 +58,14 @@ def show_menu():
             if 0 <= choice_index < len(available_chapters):
                 selected_chapter_name = available_chapters[choice_index]
                 chapter_module = importlib.import_module(f'chapters.{selected_chapter_name}')
+                chapter_number = selected_chapter_name.replace("chapter", "", 1)
+                start_function = getattr(
+                    chapter_module,
+                    f"chapter_{chapter_number}_start_game"
+                )
 
                 clear_screen()
-                chapter_module.start_game()
+                start_function()
                 # <- When a chapter ends, loop comes back here automatically
             else:
                 print("Invalid chapter number. Please try again.")

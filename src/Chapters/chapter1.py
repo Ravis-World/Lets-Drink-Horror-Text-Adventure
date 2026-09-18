@@ -3,11 +3,19 @@
 import subprocess
 import sys
 import os
+from start import clear_screen
+from .chapter2 import chapter_2_start_game
 
-def start_game(game_state=None):
+
+def chapter_1_start_game(game_state=None):
     """Start Chapter 1 of the game."""
     if game_state is None:
         game_state = {}
+        
+    clear_screen()
+    print("\n" + "=" * 50)
+    print("CHAPTER 1 - THE BAR")
+    print("=" * 50)
 
     print("\nYou are Dr. Θ. You have just devised a plan to sabotage Team Toadette.")
     print("Disguise yourself as a verified bartender and help create the ultimate death drink.\n")
@@ -38,6 +46,7 @@ def choose_option(prompt, options):
 
 # --- Water branch ---
 def additive1_water(game_state):
+    clear_screen()
     print("\nLet's see... what goes with water?\n")
     choice = choose_option("Choose your first additive:", ["Honey", "Salt"])
     game_state['branch1'] = choice
@@ -49,6 +58,7 @@ def additive1_water(game_state):
 
 
 def additive2_a1(game_state):
+    clear_screen()
     print("\nTime to kick it up a notch.\n")
     choice = choose_option("Choose your second additive:", ["Lemon Juice", "Mint Candy"])
     game_state['branch2'] = choice
@@ -60,6 +70,7 @@ def additive2_a1(game_state):
 
 
 def additive2_a2(game_state):
+    clear_screen()
     print("\nSalt... interesting choice. What next?\n")
     choice = choose_option("Choose your second additive:", ["Vinegar", "Soy Sauce"])
     game_state['branch2'] = choice
@@ -72,6 +83,7 @@ def additive2_a2(game_state):
 
 # --- Milk branch ---
 def additive1_milk(game_state):
+    clear_screen()
     print("\nMilk... classic. Now, what sweet chaos can I stir in?\n")
     choice = choose_option("Choose your first additive:", ["Sugar", "Pepper"])
     game_state['branch1'] = choice
@@ -83,6 +95,7 @@ def additive1_milk(game_state):
 
 
 def additive2_c1(game_state):
+    clear_screen()
     print("\nSweet, sweet poison. What's the next layer?\n")
     choice = choose_option("Choose your second additive:", ["Chocolate Syrup", "Strawberry"])
     game_state['branch2'] = choice
@@ -94,6 +107,7 @@ def additive2_c1(game_state):
 
 
 def additive2_c2(game_state):
+    clear_screen()
     print("\nSpicy! Let's make it even more... unique.\n")
     choice = choose_option("Choose your second additive:", ["Cinnamon", "Grated Cheese"])
     game_state['branch2'] = choice
@@ -106,48 +120,56 @@ def additive2_c2(game_state):
 
 # --- Final additive choices ---
 def final_a1a(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Eye Drops", "Dish Soap"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
 
 
 def final_a1b(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Crushed Pills", "Bar of Soap"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
 
 
 def final_a2a(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Bleach", "Chilli Sauce"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
 
 
 def final_a2b(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Ink", "Toothpaste"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
 
 
 def final_c1a(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Glue", "Nail Remover"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
 
 
 def final_c1b(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Cough Syrup", "Crayon Shavings"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
 
 
 def final_c2a(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Shampoo", "Rusty Nail"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
 
 
 def final_c2b(game_state):
+    clear_screen()
     choice = choose_option("Choose the final additive:", ["Slime", "Glue Stick Bits"])
     game_state['branch3'] = choice
     opening_ritual(game_state)
@@ -155,6 +177,7 @@ def final_c2b(game_state):
 
 # --- Opening ritual / endings ---
 def opening_ritual(game_state):
+    clear_screen()
     print("\nHere you go... your special drink.")
     print("The guest hesitantly takes the glass.")
     print("They sip slowly...\n")
@@ -212,11 +235,11 @@ def opening_ritual(game_state):
     # --- Endings dictionary ---
     endings = {
         'a1aa': "They freeze mid-sip and slowly slump over.",
-        'a1ab': "Foam bubbles from their beak, slides off the bar!",
+        'a1ab': "Foam bubbles from their mouth, slides off the bar!",
         'a1ba': "A quick gulp... Their eyes spiral, a quiet twitch... then a backward fall.",
         'a1bb': "Another sip of soap... Spinning, gurgling foam, a stiff collapse.",
         'a2aa': "Down it goes... Locked in place, a 'statue death'!",
-        'a2ab': "A spicy end! Screams erupt, steam billows... they explode in feathers!",
+        'a2ab': "A spicy end! Screams erupt, steam billows... they spontaneously combust!",
         'a2ba': "Dark liquid consumed... They turn black, ooze from the eyes, and fall lifelessly.",
         'a2bb': "Minty fresh... and deadly! Comedic bubble foam, squeaks, and freezes.",
         'c1aa': "A sticky situation... Mouth sealed, the guest flops stiff.",
@@ -232,9 +255,15 @@ def opening_ritual(game_state):
     print("\n" + endings.get(ending_key, "The ending is mysterious... You disappear in the shadows."))
 
     # --- Menu to try again or return to main menu ---
-    choice = choose_option("\nWhat do you want to do next?", ["Try another combination", "Return to Main Menu"])
+    choice = choose_option("\nWhat do you want to do next?", [
+        "Try another combination",
+        "Play Chapter 2",
+        "Return to Main Menu"
+    ])
     if choice == "Try another combination":
-        start_game(game_state)
+        chapter_1_start_game(game_state=None)
+    elif choice == "Play Chapter 2":
+        chapter_2_start_game(game_state=None)
     else:
         return_to_main_menu()
 
